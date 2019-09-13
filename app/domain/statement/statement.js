@@ -18,8 +18,7 @@ class Statement{
     }
 
     printdate(operation){
-      //  return `${operation.getDate().getMonth()}/${operation.getDate().getDay()}/${operation.getDate().getFullYear()}`;
-        return operation.getDateOperation();
+      return `${operation.getMonth()}/${operation.getDate()}/${operation.getFullYear()}`;
     }
 
 
@@ -27,14 +26,14 @@ class Statement{
         let result = "";
         for (let operation of this.client.getOperations()) {
             if(operation instanceof Deposit){
-                result += `Deposit ${operation.getAmount()} the ${this.printdate(operation)} and the balance is ${operation.getBalance()}\n`;
+                result += `Deposit ${operation.getAmount()} the ${this.printdate(operation.getDateOperation())} and the balance is ${operation.getBalance()}\n`;
             }
             else if (operation instanceof Withdrawal){
                 if(operation.getBalance() == -1){
-                    result += `Fail Withdrawal ${operation.getAmount()} the ${this.printdate(operation)} and the balance is ${client.getAccount().getAmount()}\n`;
+                    result += `Fail Withdrawal ${operation.getAmount()} the ${this.printdate(operation.getDateOperation())} and the balance is ${this.client.getAccount().getAmount()}\n`;
                 }
                 else{
-                    result += `Withdrawal ${operation.getAmount()} the ${this.printdate(operation)} and the balance is ${operation.getBalance()}\n`;
+                    result += `Withdrawal ${operation.getAmount()} the ${this.printdate(operation.getDateOperation())} and the balance is ${operation.getBalance()}\n`;
                 }
             }
         }
