@@ -1,0 +1,14 @@
+{
+  "name": "bank-kata",
+  "version": "1.0.0",
+  "description": "bank kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Heihong Traing",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.0.0"
+  }
+}

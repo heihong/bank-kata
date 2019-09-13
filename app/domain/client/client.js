@@ -1,0 +1,30 @@
+'use strict';
+
+class Client{
+
+    constructor(name, account) {
+        this.name = name || "";
+        this.account = account;
+        this.operations = [];
+    }
+
+    getName() {
+        return this.name;
+    }
+
+
+    getAccount() {
+        return this.account;
+    }
+
+    getOperations() {
+        return this.operations;
+    }
+
+    setOperations(operations) {
+        return this.operations = operations;
+    }
+
+}
+
+module.exports = Client;
