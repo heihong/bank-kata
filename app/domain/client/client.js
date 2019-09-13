@@ -21,9 +21,13 @@ class Client{
         return this.operations;
     }
 
-    setOperations(operations) {
-        return this.operations = operations;
+    addOperation(operation){
+        if(operation.getBalance()!=-1){
+            this.operations.push(operation);
+        }
     }
+
+
 
 }
 
