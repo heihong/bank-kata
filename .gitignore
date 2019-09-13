@@ -1,7 +1,6 @@
-
-
 # dependencies
 /node_modules
+/.nyc_output
 
 # IDEs and editors
 /.idea
