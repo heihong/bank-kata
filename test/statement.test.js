@@ -34,7 +34,7 @@ describe('Test class Statement', function () {
         assert.equal(result, statement.printdate(client.getOperations()[0].getDateOperation()));
     });
 
-    it('should return makeContainer', function () {
+    it('should return container', function () {
         let result = 'Deposit 100 the 5/4/1991 and the balance is 200\n' +
             'Withdrawal 50 the 10/25/1773 and the balance is 50\n' +
             'Deposit 200 the 11/31/1992 and the balance is 300\n' +
@@ -42,13 +42,13 @@ describe('Test class Statement', function () {
         assert.equal(result, statement.makeContainer());
     });
 
-    it('should return the makeStatement', function () {
+    it('should return the statement', function () {
         let result = 'Operation for heihong \n'+
             'Deposit 100 the 5/4/1991 and the balance is 200\n' +
             'Withdrawal 50 the 10/25/1773 and the balance is 50\n' +
             'Deposit 200 the 11/31/1992 and the balance is 300\n' +
             'Fail Withdrawal 500 the 9/14/2018 and the balance is 100\n';
-        assert.equal("Operation for heihong \n", statement.makeHeader());
+        assert.equal(result, statement.makeStatement());
     });
 
 

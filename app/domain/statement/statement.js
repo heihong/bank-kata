@@ -9,16 +9,12 @@ class Statement{
         this.client = client || null;
     }
 
-    getClient() {
-        return this.client;
-    }
-
     makeHeader() {
         return `Operation for ${this.client.getName()} \n`;
     }
 
     printdate(operation){
-      return `${operation.getMonth()}/${operation.getDate()}/${operation.getFullYear()}`;
+        return `${operation.getMonth()}/${operation.getDate()}/${operation.getFullYear()}`;
     }
 
 

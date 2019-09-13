@@ -25,7 +25,7 @@ describe('Test class WithDrawal', function () {
     });
 
     it('should return -1 when you have not enough money', function () {
-       let withdrawalMoney = new WithDrawal(client, 300, "05/04/1991");
+        let withdrawalMoney = new WithDrawal(client, 300, "05/04/1991");
         assert.equal(-1, withdrawalMoney.getBalance());
     });
 
