@@ -16,4 +16,9 @@ describe('Test class Account', function () {
         assert.equal(100, account.getAmount())
     })
 
+    it('should return 200', function () {
+
+        assert.equal(200, account.setAmount(200))
+    })
+
 })
