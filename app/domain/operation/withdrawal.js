@@ -29,7 +29,7 @@ class Withdrawal{
 
 
 
-    getDate() {
+    getDateOperation() {
         let [month, day, year] = this.date.split("/");
         return new Date(year, month, day);
     }

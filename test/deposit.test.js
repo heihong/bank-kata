@@ -33,7 +33,7 @@ describe('Test class Deposit', function () {
 
     it('should return date', function () {
         let result = new Date(1991,5,4);
-        let depositDate = deposit.getDate();
+        let depositDate = deposit.getDateOperation();
         assert.equal(result.getTime(), depositDate.getTime());
     })
 })

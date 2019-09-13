@@ -36,7 +36,7 @@ describe('Test class WithDrawal', function () {
 
     it('should return date', function () {
         let result = new Date(1991,5,4);
-        let withdrawalDate = withdrawal.getDate();
+        let withdrawalDate = withdrawal.getDateOperation();
         assert.equal(result.getTime(), withdrawalDate.getTime());
     })
 

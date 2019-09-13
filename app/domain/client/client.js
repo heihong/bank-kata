@@ -22,9 +22,7 @@ class Client{
     }
 
     addOperation(operation){
-        if(operation.getBalance()!=-1){
-            this.operations.push(operation);
-        }
+        this.operations.push(operation);
     }
 
 
