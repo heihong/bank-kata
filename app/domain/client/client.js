@@ -4,7 +4,7 @@ class Client{
 
     constructor(name, account) {
         this.name = name || "";
-        this.account = account;
+        this.account = account || null;
         this.operations = [];
     }
 

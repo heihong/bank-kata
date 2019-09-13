@@ -26,7 +26,8 @@ class Deposit{
 
 
     getDate() {
-        return this.date;
+        let [month, day, year] = this.date.split("/");
+        return new Date(year, month, day);
     }
 
 

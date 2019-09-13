@@ -15,17 +15,12 @@ describe('Test class Client', function () {
         client = new Client("heihong", account);
     });
 
-    it('should return 100', function () {
+    it('should return heihong', function () {
 
         assert.equal("heihong", client.getName())
     })
 
     it('should return account', function () {
-        assert.equal(account, client.getAccount());
-    })
-
-    it('should return 1', function () {
-
         assert.equal(account, client.getAccount());
     })
 
@@ -43,11 +38,12 @@ describe('Test class Client', function () {
         assert.equal(2, client.getOperations().length);
     })
 
-    it('should return 2', function () {
+    it('should return 1 when the withdrawal is higher than the money amount of the account', function () {
         let deposit = new Deposit(client, 100, "05/04/1991");
         let withdrawal = new Withdrawal(client, 300, "09/04/1991");
         client.addOperation(deposit);
         client.addOperation(withdrawal);
+        assert.equal(-1, withdrawal.getBalance());
         assert.equal(1, client.getOperations().length);
     })
 

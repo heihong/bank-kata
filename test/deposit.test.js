@@ -25,4 +25,15 @@ describe('Test class Deposit', function () {
         assert.equal(200, deposit.getBalance());
     })
 
+
+    it('should return client', function () {
+
+        assert.equal(client, deposit.getClient());
+    })
+
+    it('should return date', function () {
+        let result = new Date(1991,5,4);
+        let depositDate = deposit.getDate();
+        assert.equal(result.getTime(), depositDate.getTime());
+    })
 })
