@@ -26,7 +26,7 @@ describe('Test class Statement', function () {
     });
 
     it('should return the header', function () {
-        assert.equal("Operation for heihong \n", statement.makeHeader())
+        assert.equal("Operation for heihong \n", statement.makeHeader());
     });
 
     it('should return the date of the first element of Operations', function () {
@@ -48,7 +48,7 @@ describe('Test class Statement', function () {
             'Withdrawal 50 the 10/25/1773 and the balance is 50\n' +
             'Deposit 200 the 11/31/1992 and the balance is 300\n' +
             'Fail Withdrawal 500 the 9/14/2018 and the balance is 100\n';
-        assert.equal("Operation for heihong \n", statement.makeHeader())
+        assert.equal("Operation for heihong \n", statement.makeHeader());
     });
 
 

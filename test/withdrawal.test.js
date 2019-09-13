@@ -18,21 +18,21 @@ describe('Test class WithDrawal', function () {
 
     it('should return 100', function () {
         assert.equal(50, withdrawal.getAmount());
-    })
+    });
 
     it('should return 50', function () {
         assert.equal(50, withdrawal.getBalance());
-    })
+    });
 
     it('should return -1 when you have not enough money', function () {
        let withdrawalMoney = new WithDrawal(client, 300, "05/04/1991");
         assert.equal(-1, withdrawalMoney.getBalance());
-    })
+    });
 
 
     it('should return client', function () {
         assert.equal(client, withdrawal.getClient());
-    })
+    });
 
     it('should return date', function () {
         let result = new Date(1991,5,4);
@@ -41,4 +41,4 @@ describe('Test class WithDrawal', function () {
     })
 
 
-})
+});

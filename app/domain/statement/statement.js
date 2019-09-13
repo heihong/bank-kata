@@ -37,11 +37,11 @@ class Statement{
                 }
             }
         }
-        return result
+        return result;
     }
 
     makeStatement() {
-        return this.makeHeader() + this.makeContainer() ;
+        return this.makeHeader() + this.makeContainer();
     }
 
 }

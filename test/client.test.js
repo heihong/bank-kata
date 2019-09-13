@@ -18,17 +18,17 @@ describe('Test class Client', function () {
     it('should return heihong', function () {
 
         assert.equal("heihong", client.getName())
-    })
+    });
 
     it('should return account', function () {
         assert.equal(account, client.getAccount());
-    })
+    });
 
     it('should return 1', function () {
         let deposit = new Deposit(client, 100, "05/04/1991");
         client.addOperation(deposit);
         assert.equal(1, client.getOperations().length);
-    })
+    });
 
     it('should return 2', function () {
         let deposit = new Deposit(client, 100, "05/04/1991");
@@ -40,4 +40,4 @@ describe('Test class Client', function () {
 
 
 
-})
+});
