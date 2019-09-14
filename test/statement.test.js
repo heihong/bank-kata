@@ -9,45 +9,43 @@ const Statement = require('../app/domain/statement/statement');
 
 describe('Test class Statement', function () {
 
-    let account, client, deposit, deposit1, withdrawal, withdrawal1, statement;
+    let account, client, deposit, deposit1, withdrawal, statement;
 
     beforeEach(()=> {
-        account = new Account(100);
+        account = new Account("heihong", 100);
         client = new Client("heihong", account);
-        deposit = new Deposit(client, 100, "05/04/1991");
-        withdrawal = new Withdrawal(client, 50, "10/25/1773");
-        deposit1 = new Deposit(client, 200, "11/31/1992");
-        withdrawal1 = new Withdrawal(client, 500, "09/14/2018");
-        client.addOperation(deposit);
-        client.addOperation(withdrawal);
-        client.addOperation(deposit1);
-        client.addOperation(withdrawal1);
+        deposit = new Deposit(account, 100, "05/04/1991");
+        withdrawal = new Withdrawal(account, 50, "10/25/1773");
+        deposit1 = new Deposit(account, 200, "11/31/1992");
+        account.addOperation(deposit);
+        account.addOperation(withdrawal);
+        account.addOperation(deposit1);
         statement = new Statement(client);
     });
 
-    it('should return the header', function () {
-        assert.equal("Operation for heihong \n", statement.makeHeader());
+    it('should test makeHeader return the result', function () {
+        let result = "Operation for heihong \n";
+        assert.equal(result, statement.makeHeader());
     });
 
-    it('should return the date of the first element of Operations', function () {
+    it('should test printdate return 5/4/1991', function () {
         let result = '5/4/1991';
-        assert.equal(result, statement.printdate(client.getOperations()[0].getDateOperation()));
+        assert.equal(result, statement.printdate(account.getOperations()[0].getDateOperation()));
     });
 
-    it('should return container', function () {
-        let result = 'Deposit 100 the 5/4/1991 and the balance is 200\n' +
-            'Withdrawal 50 the 10/25/1773 and the balance is 50\n' +
-            'Deposit 200 the 11/31/1992 and the balance is 300\n' +
-            'Fail Withdrawal 500 the 9/14/2018 and the balance is 100\n';
+    it('should test makeContainer return result', function () {
+        let result = 'Deposit 100 the 5/4/1991 and the balance is 250\n'+
+            'Withdrawal 50 the 10/25/1773 and the balance is 250\n'+
+            'Deposit 200 the 11/31/1992 and the balance is 250\n';
+        assert.equal(250, account.getTotalAmount());
         assert.equal(result, statement.makeContainer());
     });
 
     it('should return the statement', function () {
         let result = 'Operation for heihong \n'+
-            'Deposit 100 the 5/4/1991 and the balance is 200\n' +
-            'Withdrawal 50 the 10/25/1773 and the balance is 50\n' +
-            'Deposit 200 the 11/31/1992 and the balance is 300\n' +
-            'Fail Withdrawal 500 the 9/14/2018 and the balance is 100\n';
+            'Deposit 100 the 5/4/1991 and the balance is 250\n'+
+            'Withdrawal 50 the 10/25/1773 and the balance is 250\n'+
+            'Deposit 200 the 11/31/1992 and the balance is 250\n';
         assert.equal(result, statement.makeStatement());
     });
 

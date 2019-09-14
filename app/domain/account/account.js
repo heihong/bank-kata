@@ -2,16 +2,34 @@
 
 class Account{
 
-    constructor(amount) {
-        this.amount  = amount;
+    constructor(nameClient, amount) {
+        this.nameClient = nameClient || "";
+        this.totalAmount  = 0;
+        this.operations = [];
     }
 
-    getAmount() {
-        return this.amount;
+    getTotalAmount() {
+        if (this.totalAmount ==  0) {
+            this.totalAmount = this.sumAllOperations();
+        }
+        return this.totalAmount;
     }
 
-    setAmount(amount) {
-        return this.amount = amount;
+    setTotalAmount(totalAmount) {
+
+        return this.totalAmount = totalAmount;
+    }
+
+    sumAllOperations() {
+        return this.operations.reduce((total, operations) => total + operations.getAction(), 0);
+    }
+
+    getOperations() {
+        return this.operations;
+    }
+
+    addOperation(operation){
+        this.operations.push(operation);
     }
 
 }

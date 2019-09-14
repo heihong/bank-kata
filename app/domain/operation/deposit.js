@@ -2,15 +2,15 @@
 
 class Deposit{
 
-    constructor(client, amount, date) {
-        this.client = client;
+    constructor(account, amount, date) {
+        this.account = account;
         this.amount = amount || "";
         this.date = date;
-        this.balance = -1;
+        this.action = -1;
     }
 
-    getClient() {
-        return this.client;
+    getAccount() {
+        return this.account;
     }
 
 
@@ -18,18 +18,16 @@ class Deposit{
         return this.amount;
     }
 
-    getBalance() {
-        this.balance = this.client.getAccount().getAmount() + this.amount;
-        return this.balance;
-    }
-
-
 
     getDateOperation() {
         let [month, day, year] = this.date.split("/");
         return new Date(year, month, day);
     }
 
+    getAction(){
+        this.action = this.amount;
+        return this.action;
+    }
 
 }
 

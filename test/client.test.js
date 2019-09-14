@@ -11,32 +11,20 @@ describe('Test class Client', function () {
     let account, client;
 
     beforeEach(()=> {
-        account = new Account(100);
+        account = new Account("heihong", 100);
         client = new Client("heihong", account);
     });
 
-    it('should return heihong', function () {
+    it('should test getName and return heihong', function () {
 
         assert.equal("heihong", client.getName())
     });
 
-    it('should return account', function () {
+    it('should test getAccount and return account', function () {
         assert.equal(account, client.getAccount());
     });
 
-    it('should return 1', function () {
-        let deposit = new Deposit(client, 100, "05/04/1991");
-        client.addOperation(deposit);
-        assert.equal(1, client.getOperations().length);
-    });
 
-    it('should return 2', function () {
-        let deposit = new Deposit(client, 100, "05/04/1991");
-        let withdrawal = new Withdrawal(client, 50, "09/04/1991");
-        client.addOperation(deposit);
-        client.addOperation(withdrawal);
-        assert.equal(2, client.getOperations().length);
-    })
 
 
 
