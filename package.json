@@ -4,6 +4,7 @@
   "description": "bank kata",
   "main": "index.js",
   "scripts": {
+    "test" : "mocha",
     "test-with-coverage": "nyc --reporter=text mocha"
   },
   "author": "Heihong Traing",
